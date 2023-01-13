@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const clearBtn =  document.getElementById("btnClear")
 let color = "blue";
 let mouseDown = false;
 
@@ -22,7 +23,7 @@ makeGrid (16,16)
 
 
 function paint (color){
-  let element = document.getElementsByClassName("grid-item")
+  let element = document.getElementsByClassName("grid-item");
   for (c = 0; c < element.length; c++){
     element[c].addEventListener('mouseenter', function onMouseEnter(event){
       if (mouseDown){
@@ -33,5 +34,16 @@ function paint (color){
           event.target.style.backgroundColor = color})
   }
 }
+
+
+
+function clear(){
+  let element = document.getElementsByClassName("grid-item");
+  for (c = 0; c < element.length; c++){
+    element[c].style.backgroundColor = "";
+  }
+}
+
+clearBtn.addEventListener("click", clear)
 
 paint(color);
