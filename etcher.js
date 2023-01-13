@@ -1,7 +1,9 @@
 const container = document.getElementById("container");
-const clearBtn =  document.getElementById("btnClear")
+const clearBtn =  document.getElementById("btnClear");
 let color = "blue";
 let mouseDown = false;
+let slider = document.getElementById("range")
+let output = document.getElementById("length")
 
 document.body.onmousedown = function() { 
   mouseDown = true;
@@ -19,9 +21,6 @@ function makeGrid (rows, columns) {
   };
 };
 
-makeGrid (16,16)
-
-
 function paint (color){
   let element = document.getElementsByClassName("grid-item");
   for (c = 0; c < element.length; c++){
@@ -35,8 +34,6 @@ function paint (color){
   }
 }
 
-
-
 function clear(){
   let element = document.getElementsByClassName("grid-item");
   for (c = 0; c < element.length; c++){
@@ -44,6 +41,18 @@ function clear(){
   }
 }
 
+makeGrid (slider.value, slider.value)
+
 clearBtn.addEventListener("click", clear)
 
 paint(color);
+
+document.addEventListener("DOMContentLoaded", function() {
+  output.innerHTML = slider.value;
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+    makeGrid(slider.value, slider.value)
+    clear()
+    paint(color);
+  }
+})
