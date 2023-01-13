@@ -1,5 +1,5 @@
 
-body{
+#content{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +11,9 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 100px;
-    
+    position: absolute;
+    top: 350;   
+    left: 400; 
 }
 
 #container{
@@ -23,6 +25,8 @@ body{
     grid-template-rows: repeat(var(--grid_rows), 1fr);
     grid-template-columns: repeat(var(--grid_col), 1fr);
     margin: 200px;
+    position: relative;
+    
 }
 
 .grid-item{
