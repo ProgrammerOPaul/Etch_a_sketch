@@ -26,19 +26,12 @@ function paint (color){
   for (c = 0; c < element.length; c++){
     element[c].addEventListener('mouseenter', function onMouseEnter(event){
       if (mouseDown){
-        event.target.style.backgroundColor = color
-      }
-    })
+        event.target.style.backgroundColor = color}
+     }
+    )
     element[c].addEventListener('mousedown', function onClick(event) {
-          event.target.style.backgroundColor = color}
-        )
+          event.target.style.backgroundColor = color})
   }
 }
 
-
-
-
 paint(color);
-
-
-// Element.addEventListener('click', color);

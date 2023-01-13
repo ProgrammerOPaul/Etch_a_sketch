@@ -5,6 +5,15 @@ body{
     justify-content: center;
 }
 
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    
+}
+
 #container{
     display: grid;
     height: 500px;
@@ -13,12 +22,12 @@ body{
     border: 1px solid black;
     grid-template-rows: repeat(var(--grid_rows), 1fr);
     grid-template-columns: repeat(var(--grid_col), 1fr);
+    margin: 200px;
 }
 
 .grid-item{
     display: flex;
     padding: 1px;
-    /* border: 1px solid black; */
     align-items: center;
     justify-content: center;
 }
