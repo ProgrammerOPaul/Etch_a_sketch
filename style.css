@@ -7,13 +7,18 @@ body{
 
 #container{
     display: grid;
-    grid-gap: 1em;
+    height: 500px;
+    width: 500px;
+    grid-gap: 0px;
+    border: 1px solid black;
     grid-template-rows: repeat(var(--grid_rows), 1fr);
     grid-template-columns: repeat(var(--grid_col), 1fr);
 }
 
 .grid-item{
-    padding: 1em;
-    border: 1px solid black;
-    text-align: center;
+    display: flex;
+    padding: 1px;
+    /* border: 1px solid black; */
+    align-items: center;
+    justify-content: center;
 }
