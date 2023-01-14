@@ -1,5 +1,7 @@
 const container = document.getElementById("container");
 const clearBtn =  document.getElementById("btnClear");
+const colorPicker = document.getElementById("picker");
+const gridItems = document.getElementsByClassName("grid-item");
 let slider = document.getElementById("range");
 let output = document.getElementById("length");
 let color = "black";
@@ -22,29 +24,31 @@ function makeGrid (rows, columns) {
 };
 
 function removeGrid(){
-  const elements = document.getElementsByClassName("grid-item");
-  while(elements.length > 0){
-      elements[0].parentNode.removeChild(elements[0]);
+  while(gridItems.length > 0){
+      gridItems[0].parentNode.removeChild(gridItems[0]);
   }
 }
 
 function paint (color){
-  let element = document.getElementsByClassName("grid-item");
-  for (c = 0; c < element.length; c++){
-    element[c].addEventListener('mouseenter', function onMouseEnter(event){
+  for (c = 0; c < gridItems.length; c++){
+    gridItems[c].addEventListener('mouseenter', function onMouseEnter(event){
       if (mouseDown){
         event.target.style.backgroundColor = color}
      }
     )
-    element[c].addEventListener('mousedown', function onClick(event) {
+    gridItems[c].addEventListener('mousedown', function onClick(event) {
           event.target.style.backgroundColor = color})
   }
 }
 
+function pickColor(event) {
+  color = event.target.value;
+  paint(color);
+};
+
 function clear(){
-  let element = document.getElementsByClassName("grid-item");
-  for (c = 0; c < element.length; c++){
-    element[c].style.backgroundColor = "";
+  for (c = 0; c < gridItems.length; c++){
+    gridItems[c].style.backgroundColor = "";
   }
 }
 
@@ -53,6 +57,8 @@ makeGrid (slider.value, slider.value);
 paint(color);
 
 clearBtn.addEventListener("click", clear);
+
+colorPicker.addEventListener("change", pickColor);
 
 document.addEventListener("DOMContentLoaded", function() {
   output.innerHTML = slider.value + "x" + slider.value;
@@ -64,11 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 })
 
-colorPicker = document.getElementById("picker");
 
-colorPicker.addEventListener("change", watchColorPicker);
 
-function watchColorPicker(event) {
-    color = event.target.value;
-    paint(color);
-  };
+
+
