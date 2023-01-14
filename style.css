@@ -5,18 +5,29 @@
     justify-content: center;
 }
 
+#size{
+    margin: 0px;
+}
+
 #buttons{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 100px;
-    position: absolute;
-    top: 350;   
+    gap: 90px;
+    top: 240;   
     left: 400; 
 }
 
-#container{
+#colorContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#gridContainer{
     display: grid;
     height: 500px;
     width: 500px;

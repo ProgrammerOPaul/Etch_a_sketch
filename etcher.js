@@ -1,10 +1,10 @@
-const container = document.getElementById("container");
+const container = document.getElementById("gridContainer");
 const clearBtn =  document.getElementById("btnClear");
 const colorPicker = document.getElementById("picker");
 const gridItems = document.getElementsByClassName("grid-item");
 let slider = document.getElementById("range");
 let output = document.getElementById("length");
-let color = "black";
+let color = colorPicker.value;
 let mouseDown = false;
 
 document.body.onmousedown = function() { 
