@@ -41,18 +41,25 @@ function clear(){
   }
 }
 
-makeGrid (slider.value, slider.value)
+makeGrid (slider.value, slider.value);
 
-clearBtn.addEventListener("click", clear)
+clearBtn.addEventListener("click", clear);
 
 paint(color);
 
+function removeGrid(){
+  const elements = document.getElementsByClassName("grid-item");
+  while(elements.length > 0){
+      elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-  output.innerHTML = slider.value;
+  output.innerHTML = slider.value + "x" + slider.value;
   slider.oninput = function() {
-    output.innerHTML = this.value;
-    makeGrid(slider.value, slider.value)
-    clear()
+    output.innerHTML = slider.value + "x" + slider.value;
+    removeGrid();
+    makeGrid(slider.value, slider.value);
     paint(color);
   }
 })
