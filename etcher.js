@@ -1,9 +1,9 @@
 const container = document.getElementById("container");
 const clearBtn =  document.getElementById("btnClear");
-let color = "blue";
+let slider = document.getElementById("range");
+let output = document.getElementById("length");
+let color = "black";
 let mouseDown = false;
-let slider = document.getElementById("range")
-let output = document.getElementById("length")
 
 document.body.onmousedown = function() { 
   mouseDown = true;
@@ -20,6 +20,13 @@ function makeGrid (rows, columns) {
     container.appendChild(cell).className = 'grid-item';
   };
 };
+
+function removeGrid(){
+  const elements = document.getElementsByClassName("grid-item");
+  while(elements.length > 0){
+      elements[0].parentNode.removeChild(elements[0]);
+  }
+}
 
 function paint (color){
   let element = document.getElementsByClassName("grid-item");
@@ -43,16 +50,9 @@ function clear(){
 
 makeGrid (slider.value, slider.value);
 
-clearBtn.addEventListener("click", clear);
-
 paint(color);
 
-function removeGrid(){
-  const elements = document.getElementsByClassName("grid-item");
-  while(elements.length > 0){
-      elements[0].parentNode.removeChild(elements[0]);
-  }
-}
+clearBtn.addEventListener("click", clear);
 
 document.addEventListener("DOMContentLoaded", function() {
   output.innerHTML = slider.value + "x" + slider.value;
@@ -63,3 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
     paint(color);
   }
 })
+
+colorPicker = document.getElementById("picker");
+
+colorPicker.addEventListener("change", watchColorPicker);
+
+function watchColorPicker(event) {
+    color = event.target.value;
+    paint(color);
+  };
