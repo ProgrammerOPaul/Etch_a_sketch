@@ -1,5 +1,6 @@
 const container = document.getElementById("gridContainer");
 const clearBtn =  document.getElementById("btnClear");
+const eraserBtn = document.getElementById("btnEraser");
 const colorPicker = document.getElementById("picker");
 const gridItems = document.getElementsByClassName("grid-item");
 let slider = document.getElementById("range");
@@ -41,6 +42,11 @@ function paint (color){
   }
 }
 
+function pickEraser(){
+  color = "";
+  paint(color);
+}
+
 function pickColor(event) {
   color = event.target.value;
   paint(color);
@@ -57,6 +63,8 @@ makeGrid (slider.value, slider.value);
 paint(color);
 
 clearBtn.addEventListener("click", clear);
+
+eraserBtn.addEventListener("click", pickEraser)
 
 colorPicker.addEventListener("change", pickColor);
 

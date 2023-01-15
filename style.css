@@ -1,3 +1,7 @@
+body{
+    background-color: beige;
+}
+
 
 #title{
     position: absolute;
@@ -25,9 +29,9 @@
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    gap: 90px;
-    top: 240;   
-    left: 400; 
+    gap: 80px;
+    top: 280px;   
+    left: 400px; 
 }
 
 #colorContainer{
