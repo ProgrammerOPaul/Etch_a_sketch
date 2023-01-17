@@ -14,23 +14,11 @@ input{
     cursor: pointer;
 }
 
-#picker{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    width: 80px;
-    height: 80px;
-    border: none;
-  }
-  #picker::-webkit-color-swatch {
-    border-radius: 50%;
-    border: none;
-  }
-  #picker::-moz-color-swatch {
-    border-radius: 50%;
-    border: none;
-  }
+#page-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #title{
     position: absolute;
@@ -44,20 +32,7 @@ input{
     font-weight: 600px;
 }
 
-#content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#size{
-    margin: 0px;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 24px;
-    justify-content: center;
-}
-
-#buttons{
+#ui-elements{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +43,7 @@ input{
     left: 370px; 
 }
 
-.subContainer{
+.ui-sub-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +51,32 @@ input{
     gap: 36px;
 }
 
-#gridContainer{
+#color-picker{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    border: none;
+  }
+  #color-picker::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+  #color-picker::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+
+#grid-size{
+    margin: 0px;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    justify-content: center;
+}
+
+#grid-container{
     display: grid;
     height: 500px;
     width: 500px;
@@ -97,7 +97,7 @@ input{
     justify-content: center;
 }
 
-.selected{
+.selected-button{
     color: white;
     background-color: gray;
 }

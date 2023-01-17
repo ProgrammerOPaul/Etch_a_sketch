@@ -9,21 +9,21 @@
     <title>Document</title>
 </head>
 <body ondragstart="return false;" ondrop="return false;">
-<div id="content">
+<div id="page-content">
     <h1 id="title">Etch a Sketch</h1>
-    <div id="buttons">
-        <div class="subContainer">
-            <input type="color" value="#000000" id="picker"/>
-            <button id="btnBrush">Brusher</button>
+    <div id="ui-elements">
+        <div class="ui-sub-container">
+            <input id="color-picker" type="color" value="#000000"/>
+            <button id="btn-brush">Brusher</button>
         </div>
-        <button id="btnEraser">Eraser</button>
-        <button id = "btnClear">Clear Painting!</button>
-        <div class="subContainer">    
-            <p  id="size">Grid Size: <span id="length"></span></p>
+        <button id="btn-eraser">Eraser</button>
+        <button id = "btn-clear">Clear Painting!</button>
+        <div class="ui-sub-container">    
+            <p  id="grid-size">Grid Size: <span id="length"></span></p>
             <input type="range" value="16" min="1" max="64" step="1" id="range">
         </div>
     </div>
-    <div id="gridContainer">
+    <div id="grid-container">
     </div>
 </div>
 <footer></footer>
