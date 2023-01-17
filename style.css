@@ -2,6 +2,18 @@ body{
     background-color: beige;
 }
 
+button{
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input{
+    cursor: pointer;
+}
+
 
 #title{
     position: absolute;
@@ -21,6 +33,10 @@ body{
 
 #size{
     margin: 0px;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
 }
 
 #buttons{
@@ -29,17 +45,18 @@ body{
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    gap: 80px;
+    gap: 70px;
     top: 280px;   
     left: 400px; 
 }
 
-#colorContainer{
+
+.subContainer{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 50px;
+    gap: 36px;
 }
 
 #gridContainer{
@@ -61,4 +78,3 @@ body{
     align-items: center;
     justify-content: center;
 }
-
