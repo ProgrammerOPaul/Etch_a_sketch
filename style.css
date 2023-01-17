@@ -50,7 +50,6 @@ input{
     left: 400px; 
 }
 
-
 .subContainer{
     display: flex;
     align-items: center;
@@ -64,11 +63,12 @@ input{
     height: 500px;
     width: 500px;
     grid-gap: 0px;
-    border: 1px solid black;
     grid-template-rows: repeat(var(--grid_rows), 1fr);
     grid-template-columns: repeat(var(--grid_col), 1fr);
     margin: 200px;
     position: relative;
+    background-color: white;
+    box-shadow: 1px 1px 30px -20px black;
     
 }
 
