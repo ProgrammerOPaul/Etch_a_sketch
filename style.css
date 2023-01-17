@@ -19,8 +19,8 @@ input{
     -moz-appearance: none;
     appearance: none;
     background-color: transparent;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border: none;
   }
   #picker::-webkit-color-swatch {
@@ -54,7 +54,6 @@ input{
     margin: 0px;
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 24px;
-    font-weight: 600;
     justify-content: center;
 }
 
@@ -65,8 +64,8 @@ input{
     flex-direction: column;
     position: absolute;
     gap: 65px;
-    top: 250px;   
-    left: 400px; 
+    top: 200px;   
+    left: 370px; 
 }
 
 .subContainer{
@@ -87,7 +86,7 @@ input{
     margin: 200px;
     position: relative;
     background-color: white;
-    box-shadow: 1px 1px 30px -20px black;
+    box-shadow: 1px 1px 30px -15px black;
     
 }
 
@@ -96,4 +95,9 @@ input{
     padding: 1px;
     align-items: center;
     justify-content: center;
+}
+
+.selected{
+    color: white;
+    background-color: gray;
 }

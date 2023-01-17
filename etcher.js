@@ -1,6 +1,7 @@
 const container = document.getElementById("gridContainer");
 const clearBtn =  document.getElementById("btnClear");
 const eraserBtn = document.getElementById("btnEraser");
+const brushBtn = document.getElementById("btnBrush");
 const colorPicker = document.getElementById("picker");
 const gridItems = document.getElementsByClassName("grid-item");
 let slider = document.getElementById("range");
@@ -43,8 +44,7 @@ function paint (color){
 }
 
 function pickEraser(){
-  color = "";
-  paint(color);
+  paint("");
 }
 
 function pickColor(event) {
@@ -58,15 +58,38 @@ function clear(){
   }
 }
 
+function btnPressed(button){
+  selected = document.getElementsByClassName("selected");
+  if (selected.length > 0){
+    selected[0].classList.remove("selected");
+    button.classList.add("selected");
+  }
+  else{
+    button.classList.add("selected");
+  }
+
+}
+
 makeGrid (slider.value, slider.value);
 
 paint(color);
 
 clearBtn.addEventListener("click", clear);
 
-eraserBtn.addEventListener("click", pickEraser)
+eraserBtn.addEventListener("click", function(){
+  pickEraser();
+  btnPressed(eraserBtn);
+});
 
-colorPicker.addEventListener("change", pickColor);
+brushBtn.addEventListener("click", function(){
+  paint(color);
+  btnPressed(brushBtn);
+});
+
+colorPicker.addEventListener("change", function(event){
+  pickColor(event);
+  btnPressed(brushBtn);
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   output.innerHTML = slider.value + "x" + slider.value;
@@ -76,7 +99,12 @@ document.addEventListener("DOMContentLoaded", function() {
     makeGrid(slider.value, slider.value);
     paint(color);
   }
-})
+});
+
+$('button').on('click', function(){
+  $('button').removeClass('selected');
+  $(this).addClass('selected');
+});
 
 
 
